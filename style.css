@@ -20,7 +20,7 @@ body, html {
 }
 
 #googTextAlt {
-    font-size: small;
+    font-size: medium;
 }
 
 #search {
@@ -30,6 +30,7 @@ body, html {
     justify-content: center;
     margin: auto;
     width: 50vw;
+    max-width: 600px;
 }
 
 #searchBox {
