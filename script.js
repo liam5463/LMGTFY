@@ -18,7 +18,6 @@ function getFunc(){
 }
 
 function function1() {
-
     searchButton = document.getElementById("searchButton");
 
     if (query == null) {
@@ -34,36 +33,26 @@ function function1() {
     else if (SorG == false) {
         searchFunc()
     }
-
 }
 
 function function2() {
-
-    console.log("test")
-
     if (SorG == false) {
         SorG = true
         getFunc()
         const cursor = document.getElementById("cursor").remove()
         cursor.remove()
     }
-
 }
 
 function genSearch() {
-
     var searchString = document.getElementById("searchBox").value;
 
-    console.log(searchString)
-
     if (searchString == "" || null ){
-        console.log()
         searchBox.setAttribute("placeholder", "You need to enter something...")
     }
     else {
         endpoint = encodeURI(searchString);
         genURL = window.location.href + "?q=" + endpoint;
-
         link = document.createElement("a");
         linkNode = document.createTextNode(genURL);
         link.appendChild(linkNode);
@@ -81,11 +70,9 @@ async function typeWriter(txt) {
         i ++;
         await new Promise(r => setTimeout(r, Math.random() * (500 - 100) + 100));
     }
-
 }
 
 async function getSearch() {
-
     await typeWriter(query, 50);
 
     const cursor = document.createElement("img");
@@ -96,15 +83,10 @@ async function getSearch() {
     cursor.id = "cursor";
 
     searchButton = document.getElementById("searchButton");
-
     searchButton.setAttribute("onClick", "goSearch()");
-
 }
 
 async function goSearch() {
-
     let googURL = "https://google.com/search?q=" + query;
-
     window.location.replace(googURL);
-
 }
