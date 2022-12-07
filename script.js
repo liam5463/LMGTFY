@@ -4,18 +4,48 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
 
 let query = params.q;
 
+let SorG = null;
+
+function searchFunc() {
+    searchButton.innerText = "Search";
+    searchButton.setAttribute("onClick", "getSearch()");
+    document.body.onload = getSearch();
+}
+
+function getFunc(){
+    searchButton.innerText = "Generate URL";
+    searchButton.setAttribute("onClick", "genSearch()");
+}
+
 function function1() {
 
-    searchButton = document.getElementById("searchButton")
+    searchButton = document.getElementById("searchButton");
 
     if (query == null) {
-        searchButton.innerText = "Generate URL";
-        searchButton.setAttribute("onClick", "genSearch()");
+        SorG = true;
     }
     else {
-        searchButton.innerText = "Search";
-        searchButton.setAttribute("onClick", "getSearch()");
-        document.body.onload = getSearch();
+        SorG = false;
+    }
+
+    if (SorG == true) {
+        getFunc()
+    }
+    else if (SorG == false) {
+        searchFunc()
+    }
+
+}
+
+function function2() {
+
+    console.log("test")
+
+    if (SorG == false) {
+        SorG = true
+        getFunc()
+        const cursor = document.getElementById("cursor").remove()
+        cursor.remove()
     }
 
 }
