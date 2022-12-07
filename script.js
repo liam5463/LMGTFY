@@ -52,7 +52,7 @@ function genSearch() {
     }
     else {
         endpoint = encodeURI(searchString);
-        genURL = window.location.href + "?q=" + endpoint;
+        genURL = window.location.origin + "?q=" + endpoint;
         link = document.createElement("a");
         linkNode = document.createTextNode(genURL);
         link.appendChild(linkNode);
