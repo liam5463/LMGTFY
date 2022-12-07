@@ -40,7 +40,6 @@ function function2() {
         SorG = true
         getFunc()
         const cursor = document.getElementById("cursor").remove()
-        cursor.remove()
     }
 }
 
